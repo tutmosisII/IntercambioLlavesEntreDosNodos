@@ -12,7 +12,7 @@ Que necesitamos para el ejemplo:
 
 ![Diagrama Despliegue](media/despliegueDiagrama.png)
 
-## Instancia de Dos Nodos con [Vagrant](https://www.vagrantup.com/).
+## Instancia de Dos Nodos con [Vagrant](https://www.vagrantup.com/)
 
 Acorde con el diagrama de trabajo necesitamos crear dos instacias lo cual se hace el archivo [Vagrantfile](Vagrantfile).
 
@@ -28,7 +28,13 @@ La descarga inicial de la imagen [**bento/ubuntu-20.04**](https://app.vagrantup.
 
 ![SearchBox](media/VagranUbuntu2004_hyperv.png)
 
-## Plugins usados en VSCode.
+### Verificación de Nodos corriendo
+
+Se puede verificar que los nodos ya estan corriendo al revisar el manger del hypervisor.
+
+![Intancias Corriendo](media/vagrantNodesRunning.png)
+
+## Plugins usados en VSCode
 
 [![Drawio Integration](media/drawio_integration.png)](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
 
