@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Esta es la configuración minima para vagrant v2, para un ambiente multimáquina
+Vagrant.configure("2") do |config|
+
+  config.vm.provider "hyperv" do |vb|
+     # Rerserv de Memoria para cada instancia
+     vb.memory = "512"
+   end
+
+  config.vm.define "instancia1" do |in1|
+    in1.vm.box = "bento/ubuntu-20.04"
+  end
+
+  config.vm.define "instancia2" do |in2|
+    in2.vm.box = "bento/ubuntu-20.04"
+  end
+
+end
