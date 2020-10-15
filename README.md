@@ -17,11 +17,11 @@ Que necesitamos para el ejemplo:
 
 Acorde con el diagrama de trabajo necesitamos crear dos instacias lo cual se hace el archivo [Vagrantfile para windows10](v_windows/Vagrantfile) ó en el archivo [Vagrantfile para Ubuntu](v_ubuntu/Vagrantfile) 
 
-El projecto hace uso de la configuración [multimáquina](https://www.vagrantup.com/docs/multi-machine)
+El proyecto hace uso de la configuración [multimáquina](https://www.vagrantup.com/docs/multi-machine)
 
 Para levantar las dos máquinas virtuales necesitas enjecutar en una linea de comandos de administrador lo siguiente:
 
-```powershell
+```shell
 vagrant up
 ```
 
@@ -31,9 +31,45 @@ La descarga inicial de la imagen [**bento/ubuntu-20.04**](https://app.vagrantup.
 
 ### Verificación de Nodos corriendo
 
-Se puede verificar que los nodos ya estan corriendo al revisar el manger del hypervisor.
+Se puede verificar que los nodos ya estan corriendo al revisar el manger del hypervisor en windows10.
 
 ![Intancias Corriendo](media/vagrantNodesRunning.png)
+
+O al revisar el manager de virtualbox.
+
+![Administrador VirtualBox](media/VirtualBoxManager.png)
+
+## Generando las llaves en diferentes nodos
+
+Lo primero es incresar a cada uno de los nodos por ssh con el comando de vagrant y ejectuar lo siguiente:
+
+```ssh
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
+```
+
+Lo anterior creará una carpeta ~/.ssh en el folder del usuario vagrant y generaŕa una llave de tipo RSA
+en su parte publica y privada. Una explicación mas detallada puede encontarse [aquí](https://stackoverflow.com/questions/43235179/how-to-execute-ssh-keygen-without-prompt/45031320)
+
+Para ingresar a cada nodo a ejecutar el comando haga lo siguiente:
+
+```shell
+vagrant ssh instancia1
+```
+
+Esto genera los siguientes archivos de idetificación
+
+```shell
+.ssh/
+├── authorized_keys
+├── id_rsa
+└── id_rsa.pub
+```
+
+
+
+
+
+
 
 ## Plugins usados en VSCode
 
